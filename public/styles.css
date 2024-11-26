@@ -1,0 +1,251 @@
+/* Overall design */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+  color: #e8f5e9;
+}
+
+/* Search area */
+#search {
+  padding: 40px;
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 850px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#search:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+#search form {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+#search input {
+  width: 70%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#search input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+#search button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#search button:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+#search button:active {
+  transform: translateY(1px);
+}
+
+/* Results display */
+#results {
+  padding: 30px;
+  background-color: #fff;
+  margin-top: 20px;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#results:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+#results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#results li {
+  background-color: #fafafa;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#results li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#results li h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#results li p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+#results li p strong {
+  color: #333;
+}
+
+/* Upload area */
+#upload {
+  padding: 40px;
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 850px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#upload:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+#upload form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#upload input[type="file"] {
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
+#upload button {
+  padding: 14px 30px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#upload button:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+#upload button:active {
+  transform: translateY(1px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 25px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #search input {
+    width: 80%;
+  }
+
+  #search button {
+    width: 80%;
+    margin-top: 15px;
+  }
+
+  #results li h3 {
+    font-size: 1.2rem;
+  }
+
+  header {
+    padding: 20px 0;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  footer {
+    padding: 20px 0;
+  }
+}

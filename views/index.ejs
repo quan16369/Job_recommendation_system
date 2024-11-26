@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Search</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Job Search System</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/upload.html">Upload Resume PDF</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Job Search Form -->
+    <section id="search">
+      <h2>Search for Jobs</h2>
+      <form action="/search" method="POST">
+        <input
+          type="text"
+          name="query"
+          placeholder="Enter keywords..."
+          value="<%= query %>"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <!-- Display Search Results -->
+    <% if (jobs.length > 0) { %>
+    <section id="results">
+      <h2>Search Results</h2>
+      <ul>
+        <% jobs.forEach(function (job) { %>
+        <li>
+          <h3><%= job.job_title %></h3>
+          <p><strong>Company:</strong> <%= job.company %></p>
+          <p><strong>Location:</strong> <%= job.location %></p>
+          <p><strong>Job Description:</strong> <%= job.job_description %></p>
+          <p><strong>Job Type:</strong> <%= job.job_type %></p>
+          <p><strong>Salary:</strong> <%= job.salary %></p>
+          <p>
+            <strong>Requirements:</strong> <%= job.preferred_qualifications %>
+          </p>
+          <p><strong>Deadline:</strong> <%= job.application_deadline %></p>
+        </li>
+        <% }); %>
+      </ul>
+    </section>
+    <% } else { %> <% } %>
+
+    <footer>
+      <p>&copy; 2024 Job Search System</p>
+    </footer>
+  </body>
+</html>
